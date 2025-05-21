@@ -1,2 +1,3 @@
 # calculadora-digital
-Un trabajo practico simple, arme una calculadora en JavaScript, y seguramente me gustaría darle un poco de diseño con HTML y CSS a futuro.
+Un trabajo practico simple.
+Arme una calculadora en JavaScript, tengo planeado a futuro continuarlo un poco mas allá del trabajo, darle algo de estilo con HTML y CSS, agregarle nuevas funciones, etc
