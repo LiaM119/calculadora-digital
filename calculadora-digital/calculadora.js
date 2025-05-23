@@ -20,47 +20,56 @@ function division(num1, num2) {
     }
 }
 
-console.log("Bienvenido a la calculadora digital");
-console.log("1. Suma");
-console.log("2. Resta");
-console.log("3. Multiplicación");
-console.log("4. División");
+while (true) {
+    console.log("Bienvenido a la calculadora digital");
+    console.log("1. Suma");
+    console.log("2. Resta");
+    console.log("3. Multiplicación");
+    console.log("4. División");
+    console.log("0. Salir")
 
-let opción = parseInt(prompt("Indique la operación que quiera realizar:"));
-let numero1;
-let numero2;
-let rdo;
-switch (opción) {
-    case 1:
-        numero1 = parseInt(prompt("Numero 1: "));
-        numero2 = parseInt(prompt("Numero 2: "));
-        rdo = suma(numero1, numero2);
-        console.log("El resultado es: " + rdo)
-        break;
-    case 2:
-        numero1 = parseInt(prompt("Numero 1: "));
-        numero2 = parseInt(prompt("Numero 2: "));
-        rdo = resta(numero1, numero2);
-        console.log("El resultado es: " + rdo)
-        break;
-    case 3:
-        numero1 = parseInt(prompt("Numero 1: "));
-        numero2 = parseInt(prompt("Numero 2: "));
-        rdo = multiplicacion(numero1, numero2);
-        console.log("El resultado es: " + rdo)
-        break;
-    case 4:
-        numero1 = parseInt(prompt("Numero 1: "));
-        numero2 = parseInt(prompt("Numero 2: "));
-        rdo = division(numero1, numero2);
-        if (typeof rdo === "string") {
-            console.log(rdo)
-        }
-        else {
+    let opción = parseInt(prompt("Indique la operación que quiera realizar:"));
+
+    if (opción === 0) {
+        console.log("Nos vemos!");
+        break; 
+    }
+    let numero1;
+    let numero2;
+    let rdo;
+
+    switch (opción) {
+        case 1:
+            numero1 = parseInt(prompt("Numero 1: "));
+            numero2 = parseInt(prompt("Numero 2: "));
+            rdo = suma(numero1, numero2);
             console.log("El resultado es: " + rdo)
-        }
-        break;  
-    default:
-        console.log("Opción no válida.");
-        break;
+            break;
+        case 2:
+            numero1 = parseInt(prompt("Numero 1: "));
+            numero2 = parseInt(prompt("Numero 2: "));
+            rdo = resta(numero1, numero2);
+            console.log("El resultado es: " + rdo)
+            break;
+        case 3:
+            numero1 = parseInt(prompt("Numero 1: "));
+            numero2 = parseInt(prompt("Numero 2: "));
+            rdo = multiplicacion(numero1, numero2);
+            console.log("El resultado es: " + rdo)
+            break;
+        case 4:
+            numero1 = parseInt(prompt("Numero 1: "));
+            numero2 = parseInt(prompt("Numero 2: "));
+            rdo = division(numero1, numero2);
+            if (typeof rdo === "string") {
+            console.log(rdo);
+            }
+            else {
+            console.log("El resultado es: " + rdo);
+            }
+            break;  
+        default:
+            console.log("Opción no válida.");
+            break;
+    }
 }
