@@ -20,12 +20,17 @@ function division(num1, num2) {
     }
 }
 
+function potencia(num1, num2){
+    return num1 ** num2;
+}
+
 while (true) {
     console.log("Bienvenido a la calculadora digital");
     console.log("1. Suma");
     console.log("2. Resta");
     console.log("3. Multiplicación");
     console.log("4. División");
+    console.log("5. Potencia")
     console.log("0. Salir")
 
     let opción = parseInt(prompt("Indique la operación que quiera realizar:"));
@@ -34,6 +39,7 @@ while (true) {
         console.log("Nos vemos!");
         break; 
     }
+    
     let numero1;
     let numero2;
     let rdo;
@@ -67,7 +73,13 @@ while (true) {
             else {
             console.log("El resultado es: " + rdo);
             }
-            break;  
+            break;
+        case 5:
+            numero1 = parseInt(prompt("Numero 1: "));
+            numero2 = parseInt(prompt("Numero 2: ")); 
+            rdo = potencia(numero1, numero2);
+            console.log("El resultado es: "+ rdo)
+            break;
         default:
             console.log("Opción no válida.");
             break;
