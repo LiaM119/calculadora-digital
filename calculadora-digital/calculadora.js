@@ -24,6 +24,8 @@ function potencia(num1, num2){
     return num1 ** num2;
 }
 
+let historial = [] 
+
 while (true) {
     console.log("Bienvenido a la calculadora digital");
     console.log("1. Suma");
@@ -31,6 +33,7 @@ while (true) {
     console.log("3. Multiplicación");
     console.log("4. División");
     console.log("5. Potencia")
+    console.log("6. Mostrar el historial de operaciones")
     console.log("0. Salir")
 
     let opción = parseInt(prompt("Indique la operación que quiera realizar:"));
@@ -50,18 +53,21 @@ while (true) {
             numero2 = parseInt(prompt("Numero 2: "));
             rdo = suma(numero1, numero2);
             console.log("El resultado es: " + rdo)
+            historial.push(`Suma: ${numero1} + ${numero2} = ${rdo}`);
             break;
         case 2:
             numero1 = parseInt(prompt("Numero 1: "));
             numero2 = parseInt(prompt("Numero 2: "));
             rdo = resta(numero1, numero2);
             console.log("El resultado es: " + rdo)
+            historial.push(`resta: ${numero1} - ${numero2} = ${rdo}`);
             break;
         case 3:
             numero1 = parseInt(prompt("Numero 1: "));
             numero2 = parseInt(prompt("Numero 2: "));
             rdo = multiplicacion(numero1, numero2);
             console.log("El resultado es: " + rdo)
+            historial.push(`Multipliación: ${numero1} * ${numero2} = ${rdo}`);
             break;
         case 4:
             numero1 = parseInt(prompt("Numero 1: "));
@@ -72,6 +78,7 @@ while (true) {
             }
             else {
             console.log("El resultado es: " + rdo);
+            historial.push(`División: ${numero1} / ${numero2} = ${rdo}`);
             }
             break;
         case 5:
@@ -79,7 +86,15 @@ while (true) {
             numero2 = parseInt(prompt("Numero 2: ")); 
             rdo = potencia(numero1, numero2);
             console.log("El resultado es: "+ rdo)
+            historial.push(`Potencia: ${numero1} ** ${numero2} = ${rdo}`);
             break;
+        case 6: 
+            if (historial.length === 0) {
+                console.log("No hay operaciones registradas en el historial.")
+            } else {
+                console.log("Historial de operaciones: " + historial);
+            }
+            break
         default:
             console.log("Opción no válida.");
             break;
